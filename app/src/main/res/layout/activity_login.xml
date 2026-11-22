@@ -1,62 +1,116 @@
-
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="25dp"
-    android:background="#F4F6F5">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FootBook"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:textColor="#176B45"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome Back!"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:layout_marginTop="35dp"/>
-
-    <EditText
-        android:id="@+id/etEmail"
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/ivBackground"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="25dp"/>
+        android:layout_height="match_parent"
+        android:src="@drawable/login_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="Stadium Background" />
 
-    <EditText
-        android:id="@+id/etPassword"
+    <!-- Dark Overlay -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:layout_marginTop="15dp"/>
+        android:layout_height="match_parent"
+        android:background="#80000000" />
 
-    <Button
-        android:id="@+id/btnLogin"
+    <!-- Login Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="LOGIN"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#176B45"
-        android:layout_marginTop="25dp"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Register"
-        android:textSize="14sp"
-        android:textColor="#176B45"
-        android:layout_marginTop="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="25dp">
 
-</LinearLayout>
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/logo_power_league"
+                android:contentDescription="Power League"
+                android:scaleType="fitCenter" />
+
+            <!-- App Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FootBook"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp" />
+
+            <!-- Welcome -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back!"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="30dp" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="25dp" />
+
+            <!-- Password -->
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="15dp" />
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#176B45"
+                android:layout_marginTop="25dp" />
+
+            <!-- Register -->
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? Register"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="20dp"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

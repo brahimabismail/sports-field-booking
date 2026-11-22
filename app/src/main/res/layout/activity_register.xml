@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="Stadium Background" />
+
+    <!-- Dark Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="25dp">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/logo_power_league"
+                android:scaleType="fitCenter"
+                android:contentDescription="Power League" />
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join FootBook and book your field!"
+                android:textSize="14sp"
+                android:textColor="#DDFFFFFF"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Full Name -->
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="15dp" />
+
+            <!-- Password -->
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="15dp" />
+
+            <!-- Confirm Password -->
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DDFFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="15dp" />
+
+            <!-- Register Button -->
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="CREATE ACCOUNT"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#176B45"
+                android:layout_marginTop="25dp" />
+
+            <!-- Back to Login -->
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Login"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

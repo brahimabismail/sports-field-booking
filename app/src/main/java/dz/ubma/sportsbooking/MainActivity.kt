@@ -1,56 +1,30 @@
-package com.example.footbook
+package dz.ubma.sportsbooking
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Patterns
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
 
-class LoginActivity : AppCompatActivity() {
-    private var etEmail: TextInputEditText? = null
-    private var etPassword: TextInputEditText? = null
+class MainActivity : AppCompatActivity() {
+
+    private val handler = Handler(Looper.getMainLooper())
+
+    private val goToLogin = Runnable {
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
 
-        etEmail = findViewById<TextInputEditText?>(R.id.etEmail)
-        etPassword = findViewById<TextInputEditText?>(R.id.etPassword)
-        val btnLogin = findViewById<Button?>(R.id.btnLogin)
-        val tvRegister = findViewById<TextView?>(R.id.tvRegister)
+        setContentView(R.layout.activity_splash)
 
-        btnLogin.setOnClickListener(View.OnClickListener { v: View? -> attemptLogin() })
-
-        tvRegister.setOnClickListener(View.OnClickListener { v: View? ->
-            startActivity(
-                Intent(
-                    this,
-                    RegisterActivity::class.java
-                )
-            )
-        })
+        handler.postDelayed(goToLogin, 2500)
     }
 
-    private fun attemptLogin() {
-        val email = etEmail!!.getText().toString().trim { it <= ' ' }
-        val password = etPassword!!.getText().toString()
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etEmail!!.setError("بريد إلكتروني غير صالح")
-            return
-        }
-        if (TextUtils.isEmpty(password) || password.length < 6) {
-            etPassword!!.setError("6 أحرف على الأقل")
-            return
-        }
-
-        // لاحقًا: التحقق من SQLite عبر DatabaseHelper
-        startActivity(Intent(this, HomeActivity::class.java))
-        finish()
+    override fun onDestroy() {
+        handler.removeCallbacks(goToLogin)
+        super.onDestroy()
     }
 }
