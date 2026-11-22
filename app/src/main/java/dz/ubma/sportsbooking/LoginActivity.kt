@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var etEmail: EditText
@@ -36,25 +37,24 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun attemptLogin() {
 
+    private fun attemptLogin() {
         val email = etEmail.text.toString().trim()
         val password = etPassword.text.toString()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etEmail.error = "بريد إلكتروني غير صالح"
+            etEmail.error = "Invalid email address"
             return
         }
 
         if (password.length < 6) {
-            etPassword.error = "كلمة المرور يجب أن تحتوي على 6 أحرف على الأقل"
+            etPassword.error = "Password must contain at least 6 characters"
             return
         }
 
-        Toast.makeText(
-            this,
-            "تم التحقق من البيانات بنجاح",
-            Toast.LENGTH_SHORT
-        ).show()
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
-}
+ }
+

@@ -1,0 +1,271 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Home Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/home_background"
+        android:scaleType="centerCrop"
+        android:contentDescription="Football Stadium Background"/>
+
+    <!-- Dark Transparent Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"/>
+
+    <!-- Home Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome to FootBook"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Find your field!"
+                        android:textColor="#FFFFFF"
+                        android:textSize="23sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="⚽"
+                    android:textSize="27sp"
+                    android:background="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Banner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginTop="25dp"
+                android:background="#CC176B45"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PLAY YOUR GAME"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Book your favorite football field"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Let's play!"
+                    android:textColor="#F4B942"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Search -->
+            <EditText
+                android:id="@+id/etSearchField"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="25dp"
+                android:background="#FFFFFF"
+                android:hint="Search for a football field..."
+                android:padding="15dp"
+                android:singleLine="true"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:inputType="text"/>
+
+            <!-- Categories -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Categories"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnFivePlayers"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="5 vs 5"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+
+                <Button
+                    android:id="@+id/btnSevenPlayers"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="7 vs 7"
+                    android:textColor="#176B45"
+                    android:backgroundTint="#FFFFFF"/>
+
+                <Button
+                    android:id="@+id/btnElevenPlayers"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="11 vs 11"
+                    android:textColor="#176B45"
+                    android:backgroundTint="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Available Fields -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Available Fields"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <!-- Field 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#FFFFFF"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚽  Green Stadium"
+                    android:textColor="#104B32"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="📍 City Center"
+                    android:textColor="#666666"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Price: 3000 DA / hour"
+                    android:textColor="#176B45"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btnBookField1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Book Now"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+            </LinearLayout>
+
+            <!-- Field 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#FFFFFF"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚽  Champions Field"
+                    android:textColor="#104B32"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="📍 New District"
+                    android:textColor="#666666"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Price: 4000 DA / hour"
+                    android:textColor="#176B45"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btnBookField2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Book Now"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
