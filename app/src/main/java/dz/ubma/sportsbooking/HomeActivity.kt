@@ -1,5 +1,6 @@
 package dz.ubma.sportsbooking
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,38 +12,45 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // عرض تصميم الصفحة الرئيسية
         setContentView(R.layout.activity_home)
 
-        // عناصر الصفحة
+        // Search
         val etSearchField = findViewById<EditText>(R.id.etSearchField)
 
+        // Categories
         val btnFivePlayers = findViewById<Button>(R.id.btnFivePlayers)
         val btnSevenPlayers = findViewById<Button>(R.id.btnSevenPlayers)
         val btnElevenPlayers = findViewById<Button>(R.id.btnElevenPlayers)
 
+        // Booking buttons
         val btnBookField1 = findViewById<Button>(R.id.btnBookField1)
         val btnBookField2 = findViewById<Button>(R.id.btnBookField2)
 
-        // اختيار نوع الملعب
+        // Open Fields List
+        fun openFields() {
+            val intent = Intent(this, FieldsActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Categories
         btnFivePlayers.setOnClickListener {
-            showMessage("Selected: 5 vs 5")
+            openFields()
         }
 
         btnSevenPlayers.setOnClickListener {
-            showMessage("Selected: 7 vs 7")
+            openFields()
         }
 
         btnElevenPlayers.setOnClickListener {
-            showMessage("Selected: 11 vs 11")
+            openFields()
         }
 
-        // البحث عن ملعب
+        // Search
         etSearchField.setOnEditorActionListener { _, _, _ ->
             val search = etSearchField.text.toString().trim()
 
             if (search.isNotEmpty()) {
-                showMessage("Searching for: $search")
+                openFields()
             } else {
                 showMessage("Enter a field name")
             }
@@ -50,13 +58,13 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        // أزرار الحجز
+        // Booking buttons
         btnBookField1.setOnClickListener {
-            showMessage("Green Stadium selected")
+            openFields()
         }
 
         btnBookField2.setOnClickListener {
-            showMessage("Champions Field selected")
+            openFields()
         }
     }
 

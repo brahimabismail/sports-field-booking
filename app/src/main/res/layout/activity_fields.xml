@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textSize="34sp"
+            android:textColor="#176B45"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Football Fields"
+            android:textColor="#104B32"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚽"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Page Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find Your Field"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#104B32"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose the perfect place to play"
+                android:textSize="14sp"
+                android:textColor="#777777"
+                android:layout_marginTop="5dp"/>
+
+            <!-- Search -->
+            <EditText
+                android:id="@+id/etFieldSearch"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:background="#FFFFFF"
+                android:hint="Search by field name or location"
+                android:padding="14dp"
+                android:singleLine="true"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:inputType="text"/>
+
+            <!-- Filter Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Field Type"
+                android:textColor="#104B32"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginTop="22dp"/>
+
+            <!-- Filters -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btnFilterAll"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="All"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+
+                <Button
+                    android:id="@+id/btnFilterFive"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="5 vs 5"
+                    android:textColor="#176B45"
+                    android:backgroundTint="#FFFFFF"/>
+
+                <Button
+                    android:id="@+id/btnFilterSeven"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="7 vs 7"
+                    android:textColor="#176B45"
+                    android:backgroundTint="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Results Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Available Fields"
+                    android:textColor="#104B32"
+                    android:textSize="19sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvFieldsCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Fields"
+                    android:textColor="#777777"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+
+            <!-- Field 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:elevation="3dp"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="115dp"
+                    android:gravity="center"
+                    android:text="⚽"
+                    android:textSize="55sp"
+                    android:background="#176B45"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Green Stadium"
+                    android:textColor="#104B32"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 City Center"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 vs 5  •  Available"
+                    android:textColor="#176B45"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3000 DA / hour"
+                    android:textColor="#104B32"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/btnDetailsGreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="View Details"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+            </LinearLayout>
+
+            <!-- Field 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:elevation="3dp"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="115dp"
+                    android:gravity="center"
+                    android:text="⚽"
+                    android:textSize="55sp"
+                    android:background="#104B32"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Champions Field"
+                    android:textColor="#104B32"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 New District"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7 vs 7  •  Available"
+                    android:textColor="#176B45"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4000 DA / hour"
+                    android:textColor="#104B32"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/btnDetailsChampions"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="View Details"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+            </LinearLayout>
+
+            <!-- Field 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:elevation="3dp"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="115dp"
+                    android:gravity="center"
+                    android:text="⚽"
+                    android:textSize="55sp"
+                    android:background="#237B55"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elite Football Arena"
+                    android:textColor="#104B32"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 North District"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    android:layout_marginTop="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11 vs 11  •  Available"
+                    android:textColor="#176B45"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6000 DA / hour"
+                    android:textColor="#104B32"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/btnDetailsElite"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="View Details"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#176B45"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
