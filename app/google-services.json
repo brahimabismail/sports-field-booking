@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "385398472470",
+    "project_id": "sports-field-booking-a5f8c",
+    "storage_bucket": "sports-field-booking-a5f8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385398472470:android:3535595cedb084bf009a37",
+        "android_client_info": {
+          "package_name": "dz.ubma.sportsbooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI2eGLBAIt_uY4320PoBn4MHofNa7Uq_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

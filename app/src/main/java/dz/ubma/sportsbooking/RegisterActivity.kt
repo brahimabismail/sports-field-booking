@@ -7,8 +7,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
+import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     private lateinit var etFullName: EditText
     private lateinit var etEmail: EditText
@@ -17,6 +21,8 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
         setContentView(R.layout.activity_register)
 
         etFullName = findViewById(R.id.etFullName)
@@ -64,10 +70,67 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-        Toast.makeText(
-            this,
-            "Information verified successfully!",
-            Toast.LENGTH_SHORT
-        ).show()
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+
+                if (task.isSuccessful) {
+
+                    val firebaseUser = auth.currentUser
+
+                    if (firebaseUser == null) {
+                        Toast.makeText(
+                            this,
+                            "Account created, but user session is unavailable.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        return@addOnCompleteListener
+                    }
+
+                    val userId = firebaseUser.uid
+
+                    val user = hashMapOf(
+                        "uid" to userId,
+                        "fullName" to name,
+                        "email" to email,
+                        "role" to "user",
+                        "createdAt" to System.currentTimeMillis()
+                    )
+
+                    db.collection("users")
+                        .document(userId)
+                        .set(user)
+                        .addOnSuccessListener {
+
+                            Toast.makeText(
+                                this,
+                                "Account created successfully!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            startActivity(
+                                Intent(this, HomeActivity::class.java)
+                            )
+                            finish()
+                        }
+                        .addOnFailureListener { exception ->
+
+                            auth.currentUser?.delete()
+
+                            Toast.makeText(
+                                this,
+                                "Database error: ${exception.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                } else {
+
+                    Toast.makeText(
+                        this,
+                        "Registration failed: ${task.exception?.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
     }
 }
