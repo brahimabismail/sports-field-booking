@@ -32,6 +32,9 @@
         <activity
             android:name=".FieldsActivity"
             android:exported="false" />
+        <activity
+            android:name=".FieldDetailsActivity"
+            android:exported="false" />
 
     </application>
 

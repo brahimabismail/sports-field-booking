@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="#176B45">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="‹"
+            android:textSize="36sp"
+            android:textColor="#FFFFFF"
+            android:paddingEnd="20dp"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Field Details"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Stadium Image Placeholder -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="#174C36">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="⚽"
+                    android:textSize="75sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:text="Football Stadium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvFieldName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Green Stadium"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#173D2D"
+                android:layout_marginTop="20dp" />
+
+            <!-- Location -->
+            <TextView
+                android:id="@+id/tvFieldLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City Center"
+                android:textSize="15sp"
+                android:textColor="#777777"
+                android:layout_marginTop="7dp" />
+
+            <!-- Information Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Field Information"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="#173D2D"
+                android:layout_marginTop="25dp" />
+
+            <!-- Field Type -->
+            <TextView
+                android:id="@+id/tvFieldType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Players: 5 vs 5"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:padding="15dp"
+                android:background="#FFFFFF"
+                android:layout_marginTop="12dp" />
+
+            <!-- Description Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="#173D2D"
+                android:layout_marginTop="22dp" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tvFieldDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A modern football field with quality artificial grass and excellent facilities."
+                android:textSize="15sp"
+                android:textColor="#666666"
+                android:lineSpacingExtra="5dp"
+                android:layout_marginTop="10dp" />
+
+            <!-- Price -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#FFFFFF"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Price per hour"
+                    android:textSize="16sp"
+                    android:textColor="#444444" />
+
+                <TextView
+                    android:id="@+id/tvFieldPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3000 DA"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#176B45" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Book Button -->
+    <Button
+        android:id="@+id/btnBookNow"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_margin="18dp"
+        android:text="BOOK NOW"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#176B45" />
+
+</LinearLayout>
