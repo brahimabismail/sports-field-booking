@@ -87,6 +87,21 @@
                 android:backgroundTint="#FFFFFF"
                 android:layout_marginTop="15dp" />
 
+            <!-- NEW: Forgot Password -->
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Forgot Password?"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:padding="8dp"
+                android:layout_marginTop="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
             <!-- Login Button -->
             <Button
                 android:id="@+id/btnLogin"
@@ -96,7 +111,7 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#176B45"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="19dp" />
 
             <!-- Register -->
             <TextView
